@@ -964,6 +964,8 @@ body {
   <button class="tab"     onclick="go('planning',this)">📅 Planning</button>
   <button class="tab"     onclick="go('formations',this)">🎓 Formations</button>
   <button class="tab"     onclick="go('challenges',this)">⚡ Challenges</button>
+  <button class="tab"     onclick="go('todo',this)">✓ To-Do</button>
+  <button class="tab"     onclick="go('history',this)">📈 History</button>
   <button class="tab"     onclick="go('wizville',this)">⭐ Wizville</button>
 </div>
 
@@ -2037,6 +2039,76 @@ body {
     </div>
   </div>
 
+  <!-- ══ TO-DO LIST ══ -->
+  <div id="p-todo" class="page">
+    <div class="lbl">Ma To-Do List — Mises à jour en temps réel</div>
+    
+    <div class="card">
+      <div style="display:flex;gap:8px;margin-bottom:12px;">
+        <input type="text" id="todoInput" placeholder="Ajouter une tâche..." style="flex:1;padding:10px 12px;background:var(--s2);border:1px solid var(--line);border-radius:8px;font-family:inherit;font-size:13px;color:var(--t1);outline:none;" />
+        <button onclick="addTodo()" style="padding:10px 16px;background:var(--green);color:#fff;border:none;border-radius:8px;font-weight:600;cursor:pointer;font-size:13px;">➕</button>
+      </div>
+      
+      <div id="todoList" style="display:flex;flex-direction:column;gap:6px;"></div>
+      
+      <div style="margin-top:10px;padding:8px 10px;background:var(--s2);border-radius:8px;text-align:center;font-size:11px;color:var(--t3);">
+        <span id="todoCount">0</span> tâche(s) — données sauvegardées localement
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ HISTORIQUE ══ -->
+  <div id="p-history" class="page">
+    <div class="lbl">Historique — Semaines & Mois passés</div>
+    
+    <!-- Semaines S17 -->
+    <div style="margin-bottom:12px;">
+      <div style="font-size:11px;color:var(--t3);text-transform:uppercase;font-family:'DM Mono',monospace;margin-bottom:8px;">Semaines récentes</div>
+      
+      <div class="card" style="padding:14px;margin-bottom:8px;border-left:4px solid var(--amber);">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+          <span style="font-weight:600;color:var(--t1);">S17 · 20–26 Avr 2026</span>
+          <span style="font-family:'DM Mono',monospace;font-size:12px;color:var(--amber);">43 100 €</span>
+        </div>
+        <div style="display:flex;gap:8px;font-size:11px;">
+          <div style="flex:1;">TT: <b style="color:var(--green);">20,9%</b></div>
+          <div style="flex:1;">IV: <b>2,38</b></div>
+          <div style="flex:1;">PM: <b>63,2€</b></div>
+        </div>
+      </div>
+
+      <div class="card" style="padding:14px;border-left:4px solid var(--red);">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+          <span style="font-weight:600;color:var(--t1);">S16 · 13–19 Avr 2026</span>
+          <span style="font-family:'DM Mono',monospace;font-size:12px;color:var(--red);">37 200 €</span>
+        </div>
+        <div style="display:flex;gap:8px;font-size:11px;">
+          <div style="flex:1;">TT: <b>18,3%</b></div>
+          <div style="flex:1;">IV: <b>2,34</b></div>
+          <div style="flex:1;">PM: <b>62€</b></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mois -->
+    <div>
+      <div style="font-size:11px;color:var(--t3);text-transform:uppercase;font-family:'DM Mono',monospace;margin-bottom:8px;">Mois récents</div>
+      
+      <div class="card" style="padding:14px;border-left:4px solid var(--red);">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+          <span style="font-weight:600;color:var(--t1);">Avril 2026 (01→25)</span>
+          <span style="font-family:'DM Mono',monospace;font-size:12px;color:var(--red);">172 000 € <span style="color:var(--t3);">/ 190 000 €</span></span>
+        </div>
+        <div style="display:flex;gap:8px;font-size:11px;">
+          <div style="flex:1;">TT: <b>18,5%</b></div>
+          <div style="flex:1;">IV: <b>2,35</b></div>
+          <div style="flex:1;">PM: <b>62,5€</b></div>
+          <div style="flex:1;">Trafic: <b>14 900</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- ══ WIZVILLE ══ -->
   <div id="p-wizville" class="page">
 
@@ -2377,6 +2449,43 @@ document.addEventListener('DOMContentLoaded', function() {
   if (elAnneeBadge) { elAnneeBadge.textContent = sign(diffAnnee / DATA.annee.objectif * 100) + (diffAnnee / DATA.annee.objectif * 100).toFixed(1) + '%'; elAnneeBadge.className = 'badge ' + (diffAnnee >= 0 ? 'badge-green' : 'badge-red'); }
   if (elAnneeReste) { elAnneeReste.textContent = resteAnnee > 0 ? fmt(resteAnnee) + ' restant' : '✅ Objectif atteint'; elAnneeReste.style.color = resteAnnee > 0 ? 'var(--t3)' : 'var(--green)'; }
 });
+
+// ── TO-DO LIST ──
+const TODOS_KEY = 'celio_todos';
+function getTodos() { return JSON.parse(localStorage.getItem(TODOS_KEY) || '[]'); }
+function saveTodos(todos) { localStorage.setItem(TODOS_KEY, JSON.stringify(todos)); renderTodos(); }
+function addTodo() {
+  const input = document.getElementById('todoInput');
+  if (!input.value.trim()) return;
+  const todos = getTodos();
+  todos.push({ id: Date.now(), text: input.value, done: false });
+  saveTodos(todos);
+  input.value = '';
+}
+function toggleTodo(id) {
+  const todos = getTodos();
+  const todo = todos.find(t => t.id === id);
+  if (todo) { todo.done = !todo.done; saveTodos(todos); }
+}
+function deleteTodo(id) {
+  const todos = getTodos().filter(t => t.id !== id);
+  saveTodos(todos);
+}
+function renderTodos() {
+  const todos = getTodos();
+  const list = document.getElementById('todoList');
+  const count = document.getElementById('todoCount');
+  if (!list) return;
+  count.textContent = todos.length;
+  list.innerHTML = todos.map(t => `
+    <div style="display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--s2);border-radius:8px;border:1px solid var(--line);">
+      <input type="checkbox" ${t.done ? 'checked' : ''} onchange="toggleTodo(${t.id})" style="cursor:pointer;width:18px;height:18px;" />
+      <span style="flex:1;${t.done ? 'text-decoration:line-through;color:var(--t3)' : 'color:var(--t1)'};">${t.text}</span>
+      <button onclick="deleteTodo(${t.id})" style="background:none;border:none;color:var(--red);cursor:pointer;font-size:14px;">✕</button>
+    </div>
+  `).join('');
+}
+document.addEventListener('DOMContentLoaded', renderTodos);
 
 // ── NAVIGATION ──
 function go(id, btn) {
