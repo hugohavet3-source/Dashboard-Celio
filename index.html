@@ -1069,6 +1069,25 @@ body::after {
   animation: slideUpFade 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards !important;
 }
 
+
+/* 🚀 FIX SCROLL ONGLET */
+.tabs {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  width: 100% !important;
+  max-width: 100vw !important;
+  scrollbar-width: none !important; /* Firefox */
+}
+.tabs::-webkit-scrollbar {
+  display: none !important; /* Chrome/Safari */
+}
+.tab {
+  flex: 0 0 auto !important; /* Empêche le rétrécissement et force l'agencement horizontal */
+  white-space: nowrap !important;
+}
+
 </style>
 </head>
 <body>
@@ -1352,6 +1371,25 @@ body::after {
 }
 .page.on {
   animation: slideUpFade 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards !important;
+}
+
+
+/* 🚀 FIX SCROLL ONGLET */
+.tabs {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  width: 100% !important;
+  max-width: 100vw !important;
+  scrollbar-width: none !important; /* Firefox */
+}
+.tabs::-webkit-scrollbar {
+  display: none !important; /* Chrome/Safari */
+}
+.tab {
+  flex: 0 0 auto !important; /* Empêche le rétrécissement et force l'agencement horizontal */
+  white-space: nowrap !important;
 }
 
 </style>
