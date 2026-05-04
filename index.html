@@ -971,6 +971,10 @@ body {
       <span style="font-size:14px;flex-shrink:0;">📋</span>
       <div style="font-size:12px;color:var(--t1);line-height:1.5;"><b>Hebdo</b> — Fiche vendeur individuelle ajoutée</div>
     </div>
+    <div style="display:flex;align-items:flex-start;gap:9px;padding:8px 10px;background:var(--amber-dim);border-radius:10px;border:1px solid rgba(201,106,0,0.18);">
+      <span style="font-size:14px;flex-shrink:0;">⭐</span>
+      <div style="font-size:12px;color:var(--t1);line-height:1.5;"><b>Wizville S18</b> — NPS 100 🏆 · 3ème Atlantique (+14 places) · Données mises à jour</div>
+    </div>
   </div>
 </div>
 
@@ -980,6 +984,19 @@ body {
     <div class="hdr-brand">Celio Bègles<span>.</span></div>
   </div>
   <div class="hdr-week">S19 · MAI 2026</div>
+</div>
+
+<!-- ══ TICKER BANNER ══ -->
+<style>
+@keyframes tickerScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+</style>
+<div style="overflow:hidden;background:linear-gradient(90deg,#1a6b3a,#0a8a5a,#1a6b3a);border-bottom:1px solid rgba(255,255,255,0.12);height:28px;display:flex;align-items:center;flex-shrink:0;">
+  <div style="display:flex;align-items:center;white-space:nowrap;animation:tickerScroll 16s linear infinite;will-change:transform;">
+    <span style="font-family:'DM Mono',monospace;font-size:11px;font-weight:600;color:#fff;letter-spacing:0.12em;text-transform:uppercase;">🌿&nbsp; SÉQUENCE 5 : LIN &nbsp;·&nbsp; du 06/05 au 02/06 &nbsp;&nbsp;&nbsp;&nbsp; 🌿&nbsp; SÉQUENCE 5 : LIN &nbsp;·&nbsp; du 06/05 au 02/06 &nbsp;&nbsp;&nbsp;&nbsp; 🌿&nbsp; SÉQUENCE 5 : LIN &nbsp;·&nbsp; du 06/05 au 02/06 &nbsp;&nbsp;&nbsp;&nbsp; 🌿&nbsp; SÉQUENCE 5 : LIN &nbsp;·&nbsp; du 06/05 au 02/06 &nbsp;&nbsp;&nbsp;&nbsp;</span>
+  </div>
 </div>
 
 <div class="tabs">
@@ -2326,7 +2343,7 @@ body {
   <!-- ══ WIZVILLE ══ -->
   <div id="p-wizville" class="page">
 
-    <div class="lbl">Satisfaction client — S17 · 20–26 Avr 2026</div>
+    <div class="lbl">Satisfaction client — S18 · 27 Avr – 3 Mai 2026</div>
 
     <!-- Score général -->
     <div class="card" style="border-color:rgba(10,138,90,0.25);">
@@ -2334,22 +2351,22 @@ body {
         <div>
           <div style="font-family:'Syne',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--t3);margin-bottom:4px;">Moyenne générale</div>
           <div style="display:flex;align-items:baseline;gap:8px;">
-            <span style="font-family:'DM Sans',sans-serif;font-size:42px;font-weight:700;letter-spacing:-0.03em;color:var(--green);line-height:1;">9.5</span>
-            <span style="font-size:12px;color:var(--green);font-weight:600;">▲ +0.2 vs N–1</span>
+            <span style="font-family:'DM Sans',sans-serif;font-size:42px;font-weight:700;letter-spacing:-0.03em;color:var(--green);line-height:1;">9.3</span>
+            <span style="font-size:12px;color:var(--green);font-weight:600;">▲ +0.6 vs N–1</span>
           </div>
           <div style="margin-top:6px;display:flex;gap:4px;">
-            <span style="color:var(--amber);font-size:18px;">★★★★★</span>
+            <span style="color:var(--amber);font-size:18px;">★★★★½</span>
           </div>
         </div>
         <div style="text-align:right;">
           <div style="font-size:11px;color:var(--t3);margin-bottom:4px;">Avis reçus</div>
-          <div style="font-family:'DM Mono',monospace;font-size:28px;font-weight:600;color:var(--t1);">8</div>
+          <div style="font-family:'DM Mono',monospace;font-size:28px;font-weight:600;color:var(--t1);">3</div>
         </div>
       </div>
       <div style="display:flex;gap:8px;font-size:11px;">
         <div style="flex:1;padding:8px 10px;background:var(--s2);border-radius:8px;text-align:center;">
           <div style="color:var(--t3);margin-bottom:2px;">Atlantique</div>
-          <div style="font-weight:700;color:var(--t1);">9.4 <span style="font-size:10px;color:var(--t3);">=</span></div>
+          <div style="font-weight:700;color:var(--t1);">9.1 <span style="font-size:10px;color:var(--red);">▼ −0.2</span></div>
         </div>
         <div style="flex:1;padding:8px 10px;background:var(--s2);border-radius:8px;text-align:center;">
           <div style="color:var(--t3);margin-bottom:2px;">France</div>
@@ -2363,44 +2380,39 @@ body {
     <div class="card">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
         <div>
-          <div style="font-family:'DM Mono',monospace;font-size:38px;font-weight:700;color:var(--green);line-height:1;">88</div>
-          <div style="font-size:11px;color:var(--green);margin-top:2px;">▲ +33 vs N–1</div>
+          <div style="font-family:'DM Mono',monospace;font-size:38px;font-weight:700;color:var(--green);line-height:1;">100</div>
+          <div style="font-size:11px;color:var(--green);margin-top:2px;">▲ +40 vs N–1</div>
         </div>
         <div style="text-align:right;">
-          <div style="font-size:12px;color:var(--t2);">Atlantique <b style="color:var(--t1);">83</b> <span style="color:var(--green);font-size:10px;">▲+6</span></div>
-          <div style="font-size:12px;color:var(--t2);margin-top:4px;">France <b style="color:var(--t1);">78</b></div>
+          <div style="font-size:12px;color:var(--t2);">Atlantique <b style="color:var(--t1);">80</b> <span style="color:var(--red);font-size:10px;">▼−1</span></div>
+          <div style="font-size:12px;color:var(--t2);margin-top:4px;">France <b style="color:var(--t1);">80</b> <span style="color:var(--green);font-size:10px;">▲+3</span></div>
         </div>
       </div>
       <!-- Barre visuelle -->
       <div style="height:10px;background:var(--s3);border-radius:6px;overflow:hidden;margin-bottom:10px;">
-        <div style="height:100%;width:88%;background:linear-gradient(90deg,var(--green),#34c98a);border-radius:6px;animation:barGrow 1s cubic-bezier(0.22,1,0.36,1) 0.3s both;"></div>
+        <div style="height:100%;width:100%;background:linear-gradient(90deg,var(--green),#34c98a);border-radius:6px;animation:barGrow 1s cubic-bezier(0.22,1,0.36,1) 0.3s both;"></div>
       </div>
       <!-- Promoteurs / Détracteurs -->
       <div class="g2" style="margin-bottom:0;">
         <div style="background:var(--green-dim);border-radius:10px;padding:12px;text-align:center;">
           <div style="font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:var(--green);font-family:'DM Mono',monospace;margin-bottom:6px;">😊 Promoteurs</div>
-          <div style="font-size:24px;font-weight:700;color:var(--green);">7</div>
-          <div style="font-size:11px;color:var(--green);margin-top:2px;">87,5% <span style="opacity:0.7;">▲ +33p</span></div>
-          <div style="margin-top:4px;font-size:10px;color:var(--t3);">Atl. 83,5% · FR 81,4%</div>
+          <div style="font-size:24px;font-weight:700;color:var(--green);">3</div>
+          <div style="font-size:11px;color:var(--green);margin-top:2px;">100% <span style="opacity:0.7;">▲ +26.7p</span></div>
+          <div style="margin-top:4px;font-size:10px;color:var(--t3);">Atl. 83.7% · FR 82.6%</div>
         </div>
-        <div style="background:var(--s2);border-radius:10px;padding:12px;text-align:center;">
-          <div style="font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:var(--t3);font-family:'DM Mono',monospace;margin-bottom:6px;">😞 Détracteurs</div>
-          <div style="font-size:24px;font-weight:700;color:var(--t1);">0</div>
-          <div style="font-size:11px;color:var(--green);margin-top:2px;">0,0% <span style="opacity:0.7;">=</span></div>
-          <div style="margin-top:4px;font-size:10px;color:var(--t3);">Atl. 0,9% · FR 3,4%</div>
+        <div style="background:var(--green-dim);border-radius:10px;padding:12px;text-align:center;">
+          <div style="font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:var(--green);font-family:'DM Mono',monospace;margin-bottom:6px;">😊 Détracteurs</div>
+          <div style="font-size:24px;font-weight:700;color:var(--green);">0</div>
+          <div style="font-size:11px;color:var(--green);margin-top:2px;">0,0% <span style="opacity:0.7;">▼ −13.3p</span></div>
+          <div style="margin-top:4px;font-size:10px;color:var(--t3);">Atl. 4.1% · FR 2.4%</div>
         </div>
       </div>
     </div>
 
     <!-- Évolution NPS -->
-    <div class="lbl" style="margin-top:20px;">Évolution du NPS — S14 → S17</div>
+    <div class="lbl" style="margin-top:20px;">Évolution du NPS — S15 → S18</div>
     <div class="card">
       <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:6px;height:80px;padding-bottom:8px;border-bottom:1px solid var(--line2);">
-        <!-- S14 -->
-        <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;">
-          <div style="font-family:'DM Mono',monospace;font-size:11px;font-weight:600;color:var(--green);">100</div>
-          <div style="width:100%;background:var(--green);border-radius:4px 4px 0 0;height:70px;opacity:0.8;"></div>
-        </div>
         <!-- S15 -->
         <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;">
           <div style="font-family:'DM Mono',monospace;font-size:11px;font-weight:600;color:var(--amber);">57</div>
@@ -2413,68 +2425,30 @@ body {
         </div>
         <!-- S17 -->
         <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;">
-          <div style="font-family:'DM Mono',monospace;font-size:11px;font-weight:700;color:var(--green);">88</div>
-          <div style="width:100%;background:var(--green);border-radius:4px 4px 0 0;height:62px;"></div>
+          <div style="font-family:'DM Mono',monospace;font-size:11px;font-weight:600;color:var(--green);">88</div>
+          <div style="width:100%;background:var(--green);border-radius:4px 4px 0 0;height:62px;opacity:0.8;"></div>
+        </div>
+        <!-- S18 -->
+        <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;">
+          <div style="font-family:'DM Mono',monospace;font-size:11px;font-weight:700;color:var(--green);">100</div>
+          <div style="width:100%;background:var(--green);border-radius:4px 4px 0 0;height:70px;"></div>
         </div>
       </div>
       <div style="display:flex;justify-content:space-between;margin-top:6px;font-size:10px;color:var(--t3);font-family:'DM Mono',monospace;">
-        <span style="flex:1;text-align:center;">S14</span>
         <span style="flex:1;text-align:center;">S15</span>
         <span style="flex:1;text-align:center;">S16</span>
-        <span style="flex:1;text-align:center;color:var(--t1);font-weight:600;">S17</span>
+        <span style="flex:1;text-align:center;">S17</span>
+        <span style="flex:1;text-align:center;color:var(--t1);font-weight:600;">S18</span>
       </div>
-    </div>
-
-    <!-- Classement Atlantique -->
-    <div class="lbl" style="margin-top:20px;">Classement Atlantique — S17</div>
-    <div class="card" style="padding:0;overflow:hidden;">
-      <!-- Podium top 3 -->
-      <div style="padding:14px 16px 10px;">
-        <div style="display:flex;align-items:center;gap:12px;padding:10px 12px;background:var(--amber-dim);border-radius:10px;margin-bottom:6px;border:1px solid rgba(201,106,0,0.15);">
-          <div style="width:28px;height:28px;border-radius:50%;background:var(--amber);display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:13px;flex-shrink:0;">1</div>
-          <div style="flex:1;">
-            <div style="font-size:13px;font-weight:600;color:var(--t1);">celio Saintes</div>
-            <div style="font-size:10px;color:var(--amber);margin-top:1px;">▲ +11 places</div>
-          </div>
-          <div style="font-family:'DM Mono',monospace;font-size:12px;color:var(--t2);">NPS 100</div>
-        </div>
-        <div style="display:flex;align-items:center;gap:12px;padding:10px 12px;background:var(--s2);border-radius:10px;margin-bottom:6px;">
-          <div style="width:28px;height:28px;border-radius:50%;background:var(--t3);display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:13px;flex-shrink:0;">2</div>
-          <div style="flex:1;">
-            <div style="font-size:13px;font-weight:600;color:var(--t1);">celio La Rochelle</div>
-            <div style="font-size:10px;color:var(--t3);margin-top:1px;">▲ +2 places</div>
-          </div>
-          <div style="font-family:'DM Mono',monospace;font-size:12px;color:var(--t2);">NPS 100</div>
-        </div>
-        <div style="display:flex;align-items:center;gap:12px;padding:10px 12px;background:var(--s2);border-radius:10px;margin-bottom:10px;">
-          <div style="width:28px;height:28px;border-radius:50%;background:#b86b20;display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:13px;flex-shrink:0;">3</div>
-          <div style="flex:1;">
-            <div style="font-size:13px;font-weight:600;color:var(--t1);">celio Brive Retail</div>
-            <div style="font-size:10px;color:var(--t3);margin-top:1px;">▲ +4 places</div>
-          </div>
-          <div style="font-family:'DM Mono',monospace;font-size:12px;color:var(--t2);">NPS 100</div>
-        </div>
-        <!-- Notre magasin -->
-        <div style="display:flex;align-items:center;gap:12px;padding:12px 14px;background:var(--red-dim);border-radius:10px;border:1.5px solid rgba(217,48,37,0.25);">
-          <div style="width:28px;height:28px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:13px;flex-shrink:0;">11</div>
-          <div style="flex:1;">
-            <div style="font-size:13px;font-weight:700;color:var(--accent);">celio Bordeaux Bègles</div>
-            <div style="font-size:10px;color:var(--accent);margin-top:1px;opacity:0.8;">▲ +6 places · Notre magasin 🏠</div>
-          </div>
-          <div style="font-family:'DM Mono',monospace;font-size:12px;color:var(--accent);font-weight:600;">NPS 88</div>
-        </div>
+      <div style="margin-top:10px;padding:10px 12px;background:var(--green-dim);border-radius:8px;font-size:11px;color:var(--green);line-height:1.6;">
+        🏆 <b>NPS 100</b> — Score parfait cette semaine ! +40 pts vs N–1. En progression constante depuis S15 !
       </div>
-      <div style="padding:10px 16px 14px;font-size:11px;color:var(--t3);text-align:center;border-top:1px solid var(--line2);">Classement sur 19 lieux de vente — région Atlantique</div>
     </div>
 
     <!-- Expérience globale -->
     <div class="lbl" style="margin-top:20px;">Expérience globale magasin — par semaine</div>
     <div class="card">
       <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:6px;height:70px;padding-bottom:8px;border-bottom:1px solid var(--line2);">
-        <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;">
-          <div style="font-family:'DM Mono',monospace;font-size:11px;font-weight:600;color:var(--t1);">9.8</div>
-          <div style="width:100%;background:var(--green);border-radius:4px 4px 0 0;height:60px;opacity:0.8;"></div>
-        </div>
         <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;">
           <div style="font-family:'DM Mono',monospace;font-size:11px;font-weight:600;color:var(--amber);">8.4</div>
           <div style="width:100%;background:var(--amber);border-radius:4px 4px 0 0;height:30px;opacity:0.8;"></div>
@@ -2484,25 +2458,71 @@ body {
           <div style="width:100%;background:var(--t3);border-radius:4px 4px 0 0;height:42px;opacity:0.8;"></div>
         </div>
         <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;">
-          <div style="font-family:'DM Mono',monospace;font-size:11px;font-weight:700;color:var(--green);">9.5</div>
-          <div style="width:100%;background:var(--green);border-radius:4px 4px 0 0;height:52px;"></div>
+          <div style="font-family:'DM Mono',monospace;font-size:11px;font-weight:600;color:var(--green);">9.5</div>
+          <div style="width:100%;background:var(--green);border-radius:4px 4px 0 0;height:55px;opacity:0.8;"></div>
+        </div>
+        <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;">
+          <div style="font-family:'DM Mono',monospace;font-size:11px;font-weight:700;color:var(--green);">9.3</div>
+          <div style="width:100%;background:var(--green);border-radius:4px 4px 0 0;height:50px;"></div>
         </div>
       </div>
       <div style="display:flex;justify-content:space-between;margin-top:6px;font-size:10px;color:var(--t3);font-family:'DM Mono',monospace;">
-        <span style="flex:1;text-align:center;">S14</span>
         <span style="flex:1;text-align:center;">S15</span>
         <span style="flex:1;text-align:center;">S16</span>
-        <span style="flex:1;text-align:center;color:var(--t1);font-weight:600;">S17</span>
+        <span style="flex:1;text-align:center;">S17</span>
+        <span style="flex:1;text-align:center;color:var(--t1);font-weight:600;">S18</span>
       </div>
       <div style="margin-top:10px;padding:10px 12px;background:var(--green-dim);border-radius:8px;font-size:11px;color:var(--green);line-height:1.6;">
-        ✅ <b>9.5/10</b> en expérience globale magasin — au-dessus de l'Atlantique (9.4) et de la France (9.3). En progression !
+        ✅ <b>9.3/10</b> en expérience globale magasin — égal à la France (9.3) et au-dessus de l'Atlantique (9.1 ▼).
       </div>
+    </div>
+
+    <!-- Classement Atlantique -->
+    <div class="lbl" style="margin-top:20px;">Classement Atlantique — S18</div>
+    <div class="card" style="padding:0;overflow:hidden;">
+      <!-- Podium top 3 -->
+      <div style="padding:14px 16px 10px;">
+        <div style="display:flex;align-items:center;gap:12px;padding:10px 12px;background:var(--amber-dim);border-radius:10px;margin-bottom:6px;border:1px solid rgba(201,106,0,0.15);">
+          <div style="width:28px;height:28px;border-radius:50%;background:var(--amber);display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:13px;flex-shrink:0;">1</div>
+          <div style="flex:1;">
+            <div style="font-size:13px;font-weight:600;color:var(--t1);">celio La Rochelle</div>
+            <div style="font-size:10px;color:var(--amber);margin-top:1px;">▲ +4 places</div>
+          </div>
+          <div style="font-family:'DM Mono',monospace;font-size:12px;color:var(--t2);">NPS 100</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;padding:10px 12px;background:var(--s2);border-radius:10px;margin-bottom:6px;">
+          <div style="width:28px;height:28px;border-radius:50%;background:var(--t3);display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:13px;flex-shrink:0;">2</div>
+          <div style="flex:1;">
+            <div style="font-size:13px;font-weight:600;color:var(--t1);">celio Saintes</div>
+            <div style="font-size:10px;color:var(--t3);margin-top:1px;">▲ +14 places</div>
+          </div>
+          <div style="font-family:'DM Mono',monospace;font-size:12px;color:var(--t2);">NPS 100</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;padding:10px 12px;background:var(--s2);border-radius:10px;margin-bottom:10px;">
+          <div style="width:28px;height:28px;border-radius:50%;background:#b86b20;display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:13px;flex-shrink:0;">3</div>
+          <div style="flex:1;">
+            <div style="font-size:13px;font-weight:600;color:var(--t1);">celio Bordeaux Bègles</div>
+            <div style="font-size:10px;color:var(--green);margin-top:1px;">▲ +14 places · Notre magasin 🏠</div>
+          </div>
+          <div style="font-family:'DM Mono',monospace;font-size:12px;color:var(--green);font-weight:600;">NPS 100</div>
+        </div>
+        <!-- Notre magasin mis en avant -->
+        <div style="display:flex;align-items:center;gap:12px;padding:12px 14px;background:var(--green-dim);border-radius:10px;border:1.5px solid rgba(10,138,90,0.3);">
+          <div style="width:28px;height:28px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:13px;flex-shrink:0;">3</div>
+          <div style="flex:1;">
+            <div style="font-size:13px;font-weight:700;color:var(--green);">celio Bordeaux Bègles</div>
+            <div style="font-size:10px;color:var(--green);margin-top:1px;opacity:0.9;">▲ +14 places · Notre magasin 🏠🎉</div>
+          </div>
+          <div style="font-family:'DM Mono',monospace;font-size:12px;color:var(--green);font-weight:600;">NPS 100</div>
+        </div>
+      </div>
+      <div style="padding:10px 16px 14px;font-size:11px;color:var(--t3);text-align:center;border-top:1px solid var(--line2);">Classement sur 16 lieux de vente — région Atlantique</div>
     </div>
 
     <!-- Message positif -->
     <div style="padding:14px 16px;background:var(--green-dim);border-radius:12px;border:1px solid rgba(10,138,90,0.2);margin-top:4px;margin-bottom:10px;">
       <div style="font-size:12px;color:var(--green);line-height:1.7;">
-        🚀 <b>Excellente semaine satisfaction !</b> NPS 88 (+33 vs N–1), 0 détracteur, 7 promoteurs sur 8 avis. On remonte au classement Atlantique (+6 places). Continuons sur cette lancée en S18 !
+        🏆 <b>Semaine parfaite en satisfaction !</b> NPS 100 (+40 vs N–1), 0 détracteur, 3 promoteurs sur 3 avis. On passe <b>3ème sur 16</b> au classement Atlantique (+14 places) ! Continuons en S19 💪
       </div>
     </div>
 
