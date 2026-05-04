@@ -884,6 +884,191 @@ body {
   width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0;
 }
 
+
+/* ========================================================= */
+/* 🚀 UI/UX PRO MAX - 3D & GLASSMORPHISM OVERRIDE          */
+/* ========================================================= */
+:root {
+  --bg: #f4f6f9;
+  --glass-bg: rgba(255, 255, 255, 0.65);
+  --glass-border: rgba(255, 255, 255, 0.4);
+  --s1: var(--glass-bg);
+  --s2: rgba(255, 255, 255, 0.5);
+  --s3: rgba(255, 255, 255, 0.3);
+  --line: rgba(255, 255, 255, 0.6);
+  --line2: rgba(255, 255, 255, 0.4);
+  --shadow-sm: 0 8px 32px rgba(31, 38, 135, 0.05);
+  --shadow-md: 0 10px 40px rgba(31, 38, 135, 0.1);
+  --radius: 20px;
+  --radius-sm: 16px;
+  --glass-blur: blur(16px);
+  --accent: #d93025;
+}
+
+[data-theme="dark"] {
+  --bg: #0d1117;
+  --glass-bg: rgba(20, 24, 32, 0.65);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --s1: var(--glass-bg);
+  --s2: rgba(255, 255, 255, 0.05);
+  --s3: rgba(255, 255, 255, 0.02);
+  --line: rgba(255, 255, 255, 0.08);
+  --line2: rgba(255, 255, 255, 0.04);
+  --shadow-sm: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 10px 40px rgba(0, 0, 0, 0.5);
+  --accent: #f0605a;
+}
+
+body {
+  position: relative;
+  z-index: 1;
+  background-color: transparent !important;
+}
+
+/* AURORA BACKGROUND */
+body::before, body::after {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: -1;
+  pointer-events: none;
+  transition: all 1s ease;
+}
+body::before {
+  background: radial-gradient(circle at 15% 20%, rgba(96, 168, 240, 0.25), transparent 40%),
+              radial-gradient(circle at 85% 80%, rgba(240, 96, 90, 0.25), transparent 40%);
+  animation: aurora-1 12s ease-in-out infinite alternate;
+}
+body::after {
+  background: radial-gradient(circle at 80% 20%, rgba(52, 201, 138, 0.25), transparent 40%),
+              radial-gradient(circle at 20% 80%, rgba(240, 160, 48, 0.25), transparent 40%);
+  animation: aurora-2 15s ease-in-out infinite alternate;
+}
+
+[data-theme="dark"] body::before {
+  background: radial-gradient(circle at 15% 20%, rgba(96, 168, 240, 0.2), transparent 40%),
+              radial-gradient(circle at 85% 80%, rgba(240, 96, 90, 0.2), transparent 40%);
+}
+[data-theme="dark"] body::after {
+  background: radial-gradient(circle at 80% 20%, rgba(52, 201, 138, 0.2), transparent 40%),
+              radial-gradient(circle at 20% 80%, rgba(240, 160, 48, 0.2), transparent 40%);
+}
+
+@keyframes aurora-1 {
+  0% { transform: scale(1) translate(0, 0); }
+  100% { transform: scale(1.2) translate(-5%, 5%); }
+}
+@keyframes aurora-2 {
+  0% { transform: scale(1) translate(0, 0); }
+  100% { transform: scale(1.1) translate(5%, -5%); }
+}
+
+/* GLASSMORPHISM COMPONENTS */
+.card, .stat, .accordion, .coll-seller, .formation-item, .settings-panel, .hdr, .tabs, #changelog-toast, .collection-trigger {
+  background: var(--glass-bg) !important;
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border) !important;
+  box-shadow: var(--shadow-sm) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+/* REFLECTION LIGHT HIGHLIGHT */
+.card::before, .stat::before, .accordion::before, .formation-item::before, .collection-trigger::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+  opacity: 0.8;
+  z-index: 2;
+  pointer-events: none;
+}
+[data-theme="dark"] .card::before, [data-theme="dark"] .stat::before, [data-theme="dark"] .accordion::before, [data-theme="dark"] .formation-item::before, [data-theme="dark"] .collection-trigger::before {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+}
+
+.hdr {
+  border-bottom: 1px solid var(--glass-border) !important;
+  background: rgba(255, 255, 255, 0.4) !important;
+}
+[data-theme="dark"] .hdr {
+  background: rgba(20, 22, 28, 0.5) !important;
+}
+.tabs {
+  background: rgba(255, 255, 255, 0.3) !important;
+  border-bottom: 1px solid var(--glass-border) !important;
+  padding: 8px 10px;
+}
+[data-theme="dark"] .tabs {
+  background: rgba(20, 22, 28, 0.4) !important;
+}
+
+/* 3D TILT EFFECT & HOVER */
+.tilt-card {
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+  transition: transform 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s ease;
+  will-change: transform;
+}
+.tilt-card > * {
+  transform: translateZ(10px);
+}
+.tilt-card:hover {
+  box-shadow: var(--shadow-md) !important;
+  border-color: rgba(255,255,255,0.8) !important;
+}
+[data-theme="dark"] .tilt-card:hover {
+  border-color: rgba(255,255,255,0.3) !important;
+}
+.tilt-card:active {
+  transform: perspective(1000px) scale(0.97) !important;
+}
+
+/* FLOATING TAB INDICATOR */
+.tab {
+  border-bottom: none !important;
+  margin: 0 4px;
+  border-radius: 20px;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  padding: 10px 16px;
+  border: 1px solid transparent;
+}
+.tab.on {
+  background: var(--accent) !important;
+  color: white !important;
+  box-shadow: 0 4px 15px var(--red-dim);
+  transform: translateY(-2px);
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+/* BETTER BUTTONS & TAGS */
+.badge, .action-tag, .s-badge, .coll-seller-count {
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* PROGRESS BARS GLOW */
+.bar-fill {
+  box-shadow: 0 0 10px currentColor;
+}
+
+/* AVATAR GLOW */
+.avatar-svg {
+  filter: drop-shadow(0 6px 10px rgba(0,0,0,0.2));
+}
+
+/* STAGGERED PAGE ENTRY */
+@keyframes slideUpFade {
+  0% { opacity: 0; transform: translateY(30px) scale(0.95); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+.page.on {
+  animation: slideUpFade 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards !important;
+}
+
 </style>
 </head>
 <body>
@@ -984,6 +1169,191 @@ body {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
 }
+
+/* ========================================================= */
+/* 🚀 UI/UX PRO MAX - 3D & GLASSMORPHISM OVERRIDE          */
+/* ========================================================= */
+:root {
+  --bg: #f4f6f9;
+  --glass-bg: rgba(255, 255, 255, 0.65);
+  --glass-border: rgba(255, 255, 255, 0.4);
+  --s1: var(--glass-bg);
+  --s2: rgba(255, 255, 255, 0.5);
+  --s3: rgba(255, 255, 255, 0.3);
+  --line: rgba(255, 255, 255, 0.6);
+  --line2: rgba(255, 255, 255, 0.4);
+  --shadow-sm: 0 8px 32px rgba(31, 38, 135, 0.05);
+  --shadow-md: 0 10px 40px rgba(31, 38, 135, 0.1);
+  --radius: 20px;
+  --radius-sm: 16px;
+  --glass-blur: blur(16px);
+  --accent: #d93025;
+}
+
+[data-theme="dark"] {
+  --bg: #0d1117;
+  --glass-bg: rgba(20, 24, 32, 0.65);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --s1: var(--glass-bg);
+  --s2: rgba(255, 255, 255, 0.05);
+  --s3: rgba(255, 255, 255, 0.02);
+  --line: rgba(255, 255, 255, 0.08);
+  --line2: rgba(255, 255, 255, 0.04);
+  --shadow-sm: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 10px 40px rgba(0, 0, 0, 0.5);
+  --accent: #f0605a;
+}
+
+body {
+  position: relative;
+  z-index: 1;
+  background-color: transparent !important;
+}
+
+/* AURORA BACKGROUND */
+body::before, body::after {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: -1;
+  pointer-events: none;
+  transition: all 1s ease;
+}
+body::before {
+  background: radial-gradient(circle at 15% 20%, rgba(96, 168, 240, 0.25), transparent 40%),
+              radial-gradient(circle at 85% 80%, rgba(240, 96, 90, 0.25), transparent 40%);
+  animation: aurora-1 12s ease-in-out infinite alternate;
+}
+body::after {
+  background: radial-gradient(circle at 80% 20%, rgba(52, 201, 138, 0.25), transparent 40%),
+              radial-gradient(circle at 20% 80%, rgba(240, 160, 48, 0.25), transparent 40%);
+  animation: aurora-2 15s ease-in-out infinite alternate;
+}
+
+[data-theme="dark"] body::before {
+  background: radial-gradient(circle at 15% 20%, rgba(96, 168, 240, 0.2), transparent 40%),
+              radial-gradient(circle at 85% 80%, rgba(240, 96, 90, 0.2), transparent 40%);
+}
+[data-theme="dark"] body::after {
+  background: radial-gradient(circle at 80% 20%, rgba(52, 201, 138, 0.2), transparent 40%),
+              radial-gradient(circle at 20% 80%, rgba(240, 160, 48, 0.2), transparent 40%);
+}
+
+@keyframes aurora-1 {
+  0% { transform: scale(1) translate(0, 0); }
+  100% { transform: scale(1.2) translate(-5%, 5%); }
+}
+@keyframes aurora-2 {
+  0% { transform: scale(1) translate(0, 0); }
+  100% { transform: scale(1.1) translate(5%, -5%); }
+}
+
+/* GLASSMORPHISM COMPONENTS */
+.card, .stat, .accordion, .coll-seller, .formation-item, .settings-panel, .hdr, .tabs, #changelog-toast, .collection-trigger {
+  background: var(--glass-bg) !important;
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border) !important;
+  box-shadow: var(--shadow-sm) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+/* REFLECTION LIGHT HIGHLIGHT */
+.card::before, .stat::before, .accordion::before, .formation-item::before, .collection-trigger::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+  opacity: 0.8;
+  z-index: 2;
+  pointer-events: none;
+}
+[data-theme="dark"] .card::before, [data-theme="dark"] .stat::before, [data-theme="dark"] .accordion::before, [data-theme="dark"] .formation-item::before, [data-theme="dark"] .collection-trigger::before {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+}
+
+.hdr {
+  border-bottom: 1px solid var(--glass-border) !important;
+  background: rgba(255, 255, 255, 0.4) !important;
+}
+[data-theme="dark"] .hdr {
+  background: rgba(20, 22, 28, 0.5) !important;
+}
+.tabs {
+  background: rgba(255, 255, 255, 0.3) !important;
+  border-bottom: 1px solid var(--glass-border) !important;
+  padding: 8px 10px;
+}
+[data-theme="dark"] .tabs {
+  background: rgba(20, 22, 28, 0.4) !important;
+}
+
+/* 3D TILT EFFECT & HOVER */
+.tilt-card {
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+  transition: transform 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s ease;
+  will-change: transform;
+}
+.tilt-card > * {
+  transform: translateZ(10px);
+}
+.tilt-card:hover {
+  box-shadow: var(--shadow-md) !important;
+  border-color: rgba(255,255,255,0.8) !important;
+}
+[data-theme="dark"] .tilt-card:hover {
+  border-color: rgba(255,255,255,0.3) !important;
+}
+.tilt-card:active {
+  transform: perspective(1000px) scale(0.97) !important;
+}
+
+/* FLOATING TAB INDICATOR */
+.tab {
+  border-bottom: none !important;
+  margin: 0 4px;
+  border-radius: 20px;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  padding: 10px 16px;
+  border: 1px solid transparent;
+}
+.tab.on {
+  background: var(--accent) !important;
+  color: white !important;
+  box-shadow: 0 4px 15px var(--red-dim);
+  transform: translateY(-2px);
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+/* BETTER BUTTONS & TAGS */
+.badge, .action-tag, .s-badge, .coll-seller-count {
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* PROGRESS BARS GLOW */
+.bar-fill {
+  box-shadow: 0 0 10px currentColor;
+}
+
+/* AVATAR GLOW */
+.avatar-svg {
+  filter: drop-shadow(0 6px 10px rgba(0,0,0,0.2));
+}
+
+/* STAGGERED PAGE ENTRY */
+@keyframes slideUpFade {
+  0% { opacity: 0; transform: translateY(30px) scale(0.95); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+.page.on {
+  animation: slideUpFade 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards !important;
+}
+
 </style>
 <div style="overflow:hidden;background:linear-gradient(90deg,#1a6b3a,#0a8a5a,#1a6b3a);border-bottom:1px solid rgba(255,255,255,0.12);height:28px;display:flex;align-items:center;flex-shrink:0;">
   <div style="display:flex;align-items:center;white-space:nowrap;animation:tickerScroll 16s linear infinite;will-change:transform;">
