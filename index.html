@@ -951,29 +951,21 @@ body {
     <button onclick="closeChangelog()" style="width:26px;height:26px;border-radius:50%;background:var(--s3);border:none;color:var(--t3);font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;">✕</button>
   </div>
   <div style="display:flex;flex-direction:column;gap:7px;">
-    <div style="display:flex;align-items:flex-start;gap:9px;padding:8px 10px;background:var(--red-dim);border-radius:10px;border:1px solid rgba(217,48,37,0.18);">
-      <span style="font-size:14px;flex-shrink:0;">🚀</span>
-      <div style="font-size:12px;color:var(--t1);line-height:1.5;"><b>Lancement S19</b> — Objectifs, mot d'ordre et plan de semaine mis à jour</div>
-    </div>
     <div style="display:flex;align-items:flex-start;gap:9px;padding:8px 10px;background:var(--green-dim);border-radius:10px;border:1px solid rgba(10,138,90,0.18);">
       <span style="font-size:14px;flex-shrink:0;">📊</span>
-      <div style="font-size:12px;color:var(--t1);line-height:1.5;"><b>Bilan S18</b> — 57 728 € · Swing +7,2% 🔥 · ajouté à l'historique</div>
+      <div style="font-size:12px;color:var(--t1);line-height:1.5;"><b>Bilan S19</b> — Présentation siège mise à jour dans l'onglet Hebdo</div>
     </div>
     <div style="display:flex;align-items:flex-start;gap:9px;padding:8px 10px;background:var(--blue-dim);border-radius:10px;border:1px solid rgba(21,96,168,0.18);">
-      <span style="font-size:14px;flex-shrink:0;">🏪</span>
-      <div style="font-size:12px;color:var(--t1);line-height:1.5;"><b>Merch</b> — Nouveau : meilleur rayon & produit de la semaine</div>
+      <span style="font-size:14px;flex-shrink:0;">🌿</span>
+      <div style="font-size:12px;color:var(--t1);line-height:1.5;"><b>Book Vitrine Lin</b> — Séquence 5 disponible dans Hebdo</div>
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:9px;padding:8px 10px;background:var(--red-dim);border-radius:10px;border:1px solid rgba(217,48,37,0.18);">
+      <span style="font-size:14px;flex-shrink:0;">💐</span>
+      <div style="font-size:12px;color:var(--t1);line-height:1.5;"><b>Hub Book Fête des Mères</b> — Nouveau document merch dans Hebdo</div>
     </div>
     <div style="display:flex;align-items:flex-start;gap:9px;padding:8px 10px;background:var(--amber-dim);border-radius:10px;border:1px solid rgba(201,106,0,0.18);">
-      <span style="font-size:14px;flex-shrink:0;">🏆</span>
-      <div style="font-size:12px;color:var(--t1);line-height:1.5;"><b>Vendeurs</b> — Valeurs S19 à venir, mise à jour dès mardi</div>
-    </div>
-    <div style="display:flex;align-items:flex-start;gap:9px;padding:8px 10px;background:var(--green-dim);border-radius:10px;border:1px solid rgba(10,138,90,0.18);">
-      <span style="font-size:14px;flex-shrink:0;">📋</span>
-      <div style="font-size:12px;color:var(--t1);line-height:1.5;"><b>Hebdo</b> — Fiche vendeur individuelle ajoutée</div>
-    </div>
-    <div style="display:flex;align-items:flex-start;gap:9px;padding:8px 10px;background:var(--amber-dim);border-radius:10px;border:1px solid rgba(201,106,0,0.18);">
-      <span style="font-size:14px;flex-shrink:0;">⭐</span>
-      <div style="font-size:12px;color:var(--t1);line-height:1.5;"><b>Wizville S18</b> — NPS 100 🏆 · 3ème Atlantique (+14 places) · Données mises à jour</div>
+      <span style="font-size:14px;flex-shrink:0;">🎌</span>
+      <div style="font-size:12px;color:var(--t1);line-height:1.5;"><b>Fiche vendeur — 4 Licences</b> — One Piece · My Hero Academia · Sakamoto Days · Naruto</div>
     </div>
   </div>
 </div>
@@ -1069,19 +1061,30 @@ body {
           <!-- Avancement journalier -->
           <div class="lbl" style="margin-top:4px;">Objectifs journaliers — S19</div>
 
-          <!-- Barre de progression S19 — placeholder -->
-          <div id="bar-semaine" style="margin-bottom:10px;"></div>
+          <!-- Barre de progression S19 -->
+          <div id="bar-semaine" style="margin-bottom:10px;">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
+              <span style="font-size:11px;font-weight:700;color:var(--t2);">Avancement S19</span>
+              <span style="font-family:'DM Mono',monospace;font-size:11px;color:var(--amber);font-weight:700;">7 475 € <span style="color:var(--t3);font-weight:400;">/ 62 500 €</span></span>
+            </div>
+            <div style="height:8px;background:var(--s3);border-radius:8px;overflow:hidden;">
+              <div style="height:100%;width:12%;background:var(--amber);border-radius:8px;animation:barGrow 0.8s cubic-bezier(0.22,1,0.36,1) 0.2s both;"></div>
+            </div>
+            <div style="font-size:10px;color:var(--amber);margin-top:4px;font-family:'DM Mono',monospace;">12% réalisé · +975 € vs obj lundi 💪</div>
+          </div>
 
           <!-- Lundi 04/05 -->
-          <div style="display:flex;align-items:center;gap:10px;padding:11px 14px;background:var(--s2);border-radius:12px;margin-bottom:6px;border:1px solid var(--line);">
-            <div style="font-size:18px;line-height:1;">📅</div>
+          <div style="display:flex;align-items:center;gap:10px;padding:11px 14px;background:var(--green-dim);border-radius:12px;margin-bottom:6px;border:1px solid rgba(10,138,90,0.25);">
+            <div style="font-size:18px;line-height:1;">✅</div>
             <div style="flex:1;">
               <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:5px;">
                 <span style="font-size:13px;font-weight:700;color:var(--t1);">Lundi 04/05</span>
-                <span style="font-family:'DM Mono',monospace;font-size:12px;color:var(--t2);font-weight:700;">6 500 €</span>
+                <span style="font-family:'DM Mono',monospace;font-size:12px;color:var(--green);font-weight:700;">7 475 € <span style="font-size:10px;color:var(--t3);">/ 6 500 €</span></span>
               </div>
-              <div style="height:5px;background:var(--s3);border-radius:4px;"></div>
-              <div style="font-size:10px;color:var(--t3);margin-top:3px;font-family:'DM Mono',monospace;">À venir</div>
+              <div style="height:5px;background:rgba(10,138,90,0.15);border-radius:4px;overflow:hidden;">
+                <div style="height:100%;width:100%;background:var(--green);border-radius:4px;animation:barGrow 0.8s cubic-bezier(0.22,1,0.36,1) 0.2s both;"></div>
+              </div>
+              <div style="font-size:10px;color:var(--green);margin-top:3px;font-family:'DM Mono',monospace;">✅ Réalisé · +975 € vs objectif (115%) 🔥</div>
             </div>
           </div>
 
@@ -1253,12 +1256,12 @@ body {
           <div style="margin-bottom:14px;">
             <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
               <span style="font-size:11px;font-weight:700;color:var(--t2);">Avancement global Mai</span>
-              <span style="font-family:'DM Mono',monospace;font-size:11px;color:var(--green);font-weight:700;">30 100 € <span style="color:var(--t3);font-weight:400;">/ 261 000 €</span></span>
+              <span style="font-family:'DM Mono',monospace;font-size:11px;color:var(--green);font-weight:700;">37 575 € <span style="color:var(--t3);font-weight:400;">/ 261 000 €</span></span>
             </div>
             <div style="height:8px;background:var(--s3);border-radius:8px;overflow:hidden;">
-              <div style="height:100%;width:11.5%;background:var(--green);border-radius:8px;animation:barGrow 0.8s cubic-bezier(0.22,1,0.36,1) 0.2s both;"></div>
+              <div style="height:100%;width:14.4%;background:var(--green);border-radius:8px;animation:barGrow 0.8s cubic-bezier(0.22,1,0.36,1) 0.2s both;"></div>
             </div>
-            <div style="font-size:10px;color:var(--green);margin-top:4px;font-family:'DM Mono',monospace;">11,5% réalisé · +10 100 € vs obj partiel S18</div>
+            <div style="font-size:10px;color:var(--green);margin-top:4px;font-family:'DM Mono',monospace;">+11 075 € vs objectif partiel</div>
           </div>
           <div class="lbl">Objectifs partiels par semaine</div>
           <!-- S18 — réalisé -->
@@ -1280,10 +1283,10 @@ body {
           <div style="background:var(--amber-dim);border-radius:12px;padding:12px 14px;margin-bottom:8px;border:1px solid rgba(201,106,0,0.2);">
             <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;">
               <div><span style="font-size:12px;font-weight:700;color:var(--t1);">🔥 S19 — 04 au 09 Mai</span><span style="font-size:10px;color:var(--amber);margin-left:8px;font-weight:700;">OBJ 62 500 €</span></div>
-              <span style="font-family:'DM Mono',monospace;font-size:13px;color:var(--t3);font-weight:600;">— €</span>
+              <span style="font-family:'DM Mono',monospace;font-size:13px;color:var(--amber);font-weight:700;">7 475 €</span>
             </div>
-            <div style="height:5px;background:rgba(201,106,0,0.15);border-radius:4px;overflow:hidden;margin-bottom:4px;"><div style="height:100%;width:0%;background:var(--amber);border-radius:4px;"></div></div>
-            <div style="font-size:10px;color:var(--amber);margin-top:4px;font-family:'DM Mono',monospace;">Semaine en cours · Vendredi + Samedi = 55% du CA 💥</div>
+            <div style="height:5px;background:rgba(201,106,0,0.15);border-radius:4px;overflow:hidden;margin-bottom:4px;"><div style="height:100%;width:12%;background:var(--amber);border-radius:4px;animation:barGrow 0.8s cubic-bezier(0.22,1,0.36,1) 0.3s both;"></div></div>
+            <div style="font-size:10px;color:var(--amber);margin-top:4px;font-family:'DM Mono',monospace;">Lundi réalisé : 7 475 € · +975 € vs obj jour 💪 · Vendredi + Samedi = 55% du CA 💥</div>
           </div>
           <!-- S20 -->
           <div style="background:var(--s2);border-radius:12px;padding:12px 14px;margin-bottom:8px;border:1px solid var(--line);">
@@ -2026,10 +2029,10 @@ body {
   <div id="p-hebdo" class="page">
 
     <div class="lbl">Bilan semaine — PDF siège</div>
-    <div class="formation-item" onclick="openLink('https://docs.google.com/presentation/d/1-OuaGpUTOYMHoEgUIE6ZaBaXchIVEmYhC_IkdTDhFUU/edit?usp=drivesdk')">
+    <div class="formation-item" onclick="openLink('https://docs.google.com/presentation/d/1zsrGyc16OzO0r6JzWo4ZzcUVACUyPmis3nCaTPr14nM/edit?usp=sharing')">
       <div class="formation-icon">📊</div>
       <div class="formation-info">
-        <div class="formation-name">Bilan hebdomadaire S18</div>
+        <div class="formation-name">Bilan hebdomadaire S19</div>
         <div class="formation-desc">Présentation siège — Google Slides</div>
       </div>
       <div class="formation-arrow">›</div>
@@ -2067,14 +2070,41 @@ body {
       <div class="formation-arrow">›</div>
     </div>
 
+    <div class="formation-item" onclick="openLink('https://docs.google.com/presentation/d/1RjGF9Lk8ZQEJCguyY-UvOI0_6imJnQQzD-EW2Z79Vqo/edit?usp=sharing')">
+      <div class="formation-icon">🌿</div>
+      <div class="formation-info">
+        <div class="formation-name">BOOK VITRINE LIN 🆕</div>
+        <div class="formation-desc">Séquence 5 Lin — Google Slides</div>
+      </div>
+      <div class="formation-arrow">›</div>
+    </div>
+
+    <div class="formation-item" onclick="openLink('https://docs.google.com/presentation/d/1tuJ6zAcjBFA56LorYmhE7PBM8C6SLpizOHILfrcJGjI/edit?usp=sharing')">
+      <div class="formation-icon">💐</div>
+      <div class="formation-info">
+        <div class="formation-name">HUB BOOK FÊTE DES MÈRES 🆕</div>
+        <div class="formation-desc">Merchandising Fête des Mères — Google Slides</div>
+      </div>
+      <div class="formation-arrow">›</div>
+    </div>
+
     <div class="gap"></div>
     <div class="lbl">Fiches vendeur — Produits clés</div>
 
     <div class="formation-item" onclick="openLink('https://drive.google.com/file/d/1XuKyVx7kT7-LS1CJ1mCOqOqg_nQxAufv/view?usp=sharing')">
       <div class="formation-icon">🥜</div>
       <div class="formation-info">
-        <div class="formation-name">Fiche vendeur Peanuts</div>
+        <div class="formation-name">Fiche vendeur Snoopy</div>
         <div class="formation-desc">Arguments de vente — Google Drive</div>
+      </div>
+      <div class="formation-arrow">›</div>
+    </div>
+
+    <div class="formation-item" onclick="openLink('https://drive.google.com/file/d/1GJkBmlmE2ClrnroRme-0uvaVPxDGMJMF/view?usp=sharing')">
+      <div class="formation-icon">🎌</div>
+      <div class="formation-info">
+        <div class="formation-name">Fiche vendeur — 4 Licences 🆕</div>
+        <div class="formation-desc">One Piece · My Hero Academia · Sakamoto Days · Naruto</div>
       </div>
       <div class="formation-arrow">›</div>
     </div>
@@ -2539,7 +2569,7 @@ const DATA = {
   semaine: {
     objectif: 62500,
     jours: [
-      { label: 'Lun 04/05', objectif: 6500,  realise: null  },
+      { label: 'Lun 04/05', objectif: 6500,  realise: 7475  },
       { label: 'Mar 05/05', objectif: 6000,  realise: null  },
       { label: 'Mer 06/05', objectif: 7500,  realise: null  },
       { label: 'Jeu 07/05', objectif: 8000,  realise: null  },
